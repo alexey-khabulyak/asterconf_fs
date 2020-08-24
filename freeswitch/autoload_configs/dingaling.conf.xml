@@ -1,0 +1,6 @@
+<configuration name="dingaling.conf" description="XMPP Jingle Endpoint">
+  <settings>
+    <param name="debug" value="0"/>
+    <param name="codec-prefs" value="H264,PCMU"/>
+  </settings>
+</configuration>

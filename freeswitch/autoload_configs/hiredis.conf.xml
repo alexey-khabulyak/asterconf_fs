@@ -2,21 +2,15 @@
   <profiles>
     <profile name="default">
       <connections>
-	<connection name="primary">
-	  <param name="hostname" value="172.18.101.101"/>
-	  <param name="password" value="redis"/>	
-	  <param name="port" value="6379"/>
-	  <param name="timeout_ms" value="500"/>
-	</connection>
-	<connection name="secondary">
-	  <param name="hostname" value="localhost"/>
-	  <param name="password" value="redis"/>	
-	  <param name="port" value="6380"/>
-	  <param name="timeout_ms" value="500"/>
-	</connection>
+        <connection name="primary">
+          <param name="hostname" value="172.18.101.101"/>
+          <param name="password" value="redis"/>
+          <param name="port" value="6379"/>
+          <param name="timeout_ms" value="500"/>
+        </connection>
       </connections>
       <params>
-	<param name="ignore-connect-fail" value="true"/>
+        <param name="ignore-connect-fail" value="true"/>
       </params>
     </profile>
   </profiles>

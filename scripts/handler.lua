@@ -1,6 +1,10 @@
 package.path = package.path .. ";/usr/share/freeswitch/scripts/?.lua;"
 require "scripts";
 
+api = freeswitch.API()
+
+global_cache = false
+
 if (not params) then
     params = {}
     function params:getHeader(name)

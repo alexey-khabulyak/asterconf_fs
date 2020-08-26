@@ -32,6 +32,29 @@ if XML_REQUEST["key_value"] == 'ivr.conf' then
         table.insert(xml, [[  </section>]])
         table.insert(xml, [[</document>]])
     end
+elseif XML_REQUEST["key_value"] == 'hiredis.conf' then
+    table.insert(xml, [[<?xml version="1.0" encoding="UTF-8" standalone="no"?>]])
+    table.insert(xml, [[<document type="freeswitch/xml">]])
+    table.insert(xml, [[  <section name="configuration">]])
+    table.insert(xml, [[    <configuration name="hiredis.conf" description="Hiredis">]])
+    table.insert(xml, [[      <profiles>]])
+    table.insert(xml, [[        <profile name="default">]])
+    table.insert(xml, [[          <connections>]])
+    table.insert(xml, [[            <connection name="primary">]])
+    table.insert(xml, [[              <param name="hostname" value="127.0.0.1"/>]])
+    table.insert(xml, [[              <param name="password" value=""/>]])
+    table.insert(xml, [[              <param name="port" value="6379"/>]])
+    table.insert(xml, [[              <param name="timeout_ms" value="500"/>]])
+    table.insert(xml, [[            </connection>]])
+    table.insert(xml, [[          </connections>]])
+    table.insert(xml, [[          <params>]])
+    table.insert(xml, [[            <param name="ignore-connect-fail" value="true"/>]])
+    table.insert(xml, [[          </params>]])
+    table.insert(xml, [[        </profile>]])
+    table.insert(xml, [[      </profiles>]])
+    table.insert(xml, [[    </configuration>]])
+    table.insert(xml, [[  </section>]])
+    table.insert(xml, [[</document>]])
 end
 
 

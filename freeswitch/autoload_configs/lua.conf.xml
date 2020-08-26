@@ -27,6 +27,8 @@
     <!--<param name="startup-script" value="startup_script_1.lua"/>-->
     <!--<param name="startup-script" value="startup_script_2.lua"/>-->
     
-    <!--<hook event="CUSTOM" subclass="conference::maintenance" script="catch-event.lua"/>-->
+    <hook event="CUSTOM" subclass="sofia::register" script="register.lua"/>
+    <hook event="CUSTOM" subclass="sofia::register_attempt" script="register.lua"/>
+    <hook event="CUSTOM" subclass="sofia::register_failure" script="register.lua"/>
   </settings>
 </configuration>

@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+        redis:
+                image: redis
+                network_mode: "host"
+
+        db:
+                image: postgres
+                network_mode: "host"
+                environment:
+                        - POSTGRES_DB=asterconf_fs
+                        - POSTGRES_USER=asterconf_fs
+                        - POSTGRES_PASSWORD=asterconf_fs
+
+        migrate:
+                image: lehalepeha/asterconf_web
+                network_mode: "host"
+                command: python manage.py migrate
+                depends_on:
+                        - db
+
+        web:
+                image: lehalepeha/asterconf_web
+                network_mode: "host"
+                command: python manage.py runserver 127.0.0.1:8000
+                depends_on:
+                        - migrate               
+
+        freeswitch:
+                image: lehalepeha/asterconf_fs
+                network_mode: "host"
+                command: freeswitch
+                volumes:
+                        - ./freeswitch:/etc/freeswitch
+                        - ./scripts:/usr/share/freeswitch/scripts
+                depends_on:
+                        - web

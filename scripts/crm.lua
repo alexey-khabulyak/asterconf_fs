@@ -1,5 +1,5 @@
 function http_json_request(url, method, data)
-    local http = require "socket.http"
+    local http = require("socket.http")
     local json = require 'json'
     local ltn12 = require "ltn12"
     http.TIMEOUT = 2

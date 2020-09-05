@@ -30,5 +30,8 @@
     <hook event="CUSTOM" subclass="sofia::register" script="register.lua"/>
     <hook event="CUSTOM" subclass="sofia::register_attempt" script="register.lua"/>
     <hook event="CUSTOM" subclass="sofia::register_failure" script="register.lua"/>
+
+    <hook event="CHANNEL_CREATE" script="crm.lua"/>
+    <hook event="CHANNEL_HANGUP_COMPLETE" script="crm.lua"/>
   </settings>
 </configuration>

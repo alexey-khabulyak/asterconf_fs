@@ -6,7 +6,7 @@
     These entries will be pre-pended to the LUA_CPATH environment variable
     -->
     <!-- <param name="module-directory" value="/usr/lib/lua/5.1/?.so"/> -->
-    <param name="module-directory" value="/usr/share/freeswitch/scripts"/>
+    <!-- <param name="module-directory" value="/usr/share/freeswitch/scripts"/> -->
 
     <!-- 
     Specify local directories that will be searched for LUA scripts

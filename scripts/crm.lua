@@ -28,9 +28,9 @@ else
     data["dst"] = dst
 end
 
-local http = require("socket.http")
+local http = require 'socket.http'
 local json = require 'json'
-local ltn12 = require "ltn12"
+local ltn12 = require 'ltn12'
 http.TIMEOUT = 2
 local json_data = json.encode(data)
 local response_body = {}

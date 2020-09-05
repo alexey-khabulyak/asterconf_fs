@@ -38,7 +38,7 @@ local result, respcode, respheaders, respstatus = http.request {
     url = url,
     method = method,
     headers = {
-        ["Content-Type"] = "",
+        ["Content-Type"] = "application/json",
         ["content-length"] = #json_data,
         ["Authorization"] = "Token cd68267d3b026e79e5261e31fbcb8640ce7d0fa5"
     },

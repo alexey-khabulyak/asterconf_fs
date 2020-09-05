@@ -42,6 +42,6 @@ local result, respcode, respheaders, respstatus = http.request {
         ["content-length"] = #json_data,
         ["Authorization"] = "Token cd68267d3b026e79e5261e31fbcb8640ce7d0fa5"
     },
-    source = ltn12.source.string(data),
+    source = ltn12.source.string(json_data),
     sink = ltn12.sink.table(response_body)
 }

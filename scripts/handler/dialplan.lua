@@ -18,7 +18,7 @@ if #sql_result > 0 then
     local sql_string = [[select * from mod_lua_contextaction where context_id = ]] .. db_context.id .. [[ order by prio;]]
     local sql_result = database.make_query(sql_string)
     for _,v in pairs(sql_result) do
-        if params:getHeader(v.condition_field) == v.condition_value then
+        if params:getHeader(v.condition_field) == v.condition_value or string.match(params:getHeader(v.condition_field), v.condition_value) then
             table.insert(xml, [[          <action application="]] .. v.action ..[[" data="]] .. v.action_value .. [["/>]]);
         end
     end

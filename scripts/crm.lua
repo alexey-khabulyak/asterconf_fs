@@ -28,7 +28,7 @@ freeswitch.consoleLog("NOTICE", event:serialize())
 
 local src = event:getHeader("Caller-Caller-ID-Number")
 local dst = event:getHeader("Caller-Destination-Number")
-local event = event:getHeader("Event-Name")
+local event_type = event:getHeader("Event-Name")
 local uuid = event:getHeader("variable_uuid")
 local data = {}
 data["uuid"] = uuid
@@ -36,7 +36,7 @@ data["direction"] = 'inbound'
 local method = ""
 local base_url = "http://127.0.0.1:8000/api/"
 local url = ""
-if event == 'CHANNEL_HANGUP_COMPLETE' then
+if event_type == 'CHANNEL_HANGUP_COMPLETE' then
     duration = event:getHeader("variable_duration")
     status = event:getHeader("variable_hangup_cause")
     method = 'PATCH'

@@ -10,7 +10,7 @@ function http_json_request(url, method, data)
         method = method,
         headers = {
             ["Content-Type"] = "",
-            ["content-length"] = #json_data
+            ["content-length"] = #json_data,
             ["Authorization"] = "Token cd68267d3b026e79e5261e31fbcb8640ce7d0fa5"
         },
         source = ltn12.source.string(data),

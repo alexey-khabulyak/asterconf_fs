@@ -36,7 +36,7 @@ data["direction"] = 'inbound'
 local method = ""
 local base_url = "http://127.0.0.1:8000/api/"
 local url = ""
-if event = 'CHANNEL_HANGUP_COMPLETE' then
+if event == 'CHANNEL_HANGUP_COMPLETE' then
     duration = event:getHeader("variable_duration")
     status = event:getHeader("variable_hangup_cause")
     method = 'PATCH'

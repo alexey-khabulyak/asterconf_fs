@@ -8,6 +8,7 @@ freeswitch.consoleLog("NOTICE", "Session2 contact: " .. contact2)
 
 session1 = freeswitch.Session('[origination_caller_id_number=freeswitch,origination_caller_id_name=freeswitch]' .. contact1);
 
+
 if session1:ready() then
     freeswitch.consoleLog("NOTICE", "Session1 is ready")
     session1:execute("ring_ready")

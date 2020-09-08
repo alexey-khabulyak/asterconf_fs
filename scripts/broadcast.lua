@@ -7,6 +7,7 @@ local reg_users = api:executeString("show registrations as json")
 local t = json.decode(reg_users)
 
 for k,v in ipairs(t["rows"]) do
+    local event = freeswitch.Event("CUSTOM", "SMS::SEND_MESSAGE");
     event:addHeader("proto", "sip");
     event:addHeader("dest_proto", "sip");
     event:addHeader("from", "freeswitch@" .. local_ip);

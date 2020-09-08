@@ -13,6 +13,7 @@ for k,v in ipairs(t["rows"]) do
     event:addHeader("from", "freeswitch@" .. local_ip);
     event:addHeader("from_full", "sip:freeswitch@" .. local_ip);
     event:addHeader("to", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"] .. ":" .. v["network_port"]);
+    freeswitch.consoleLog('NOTICE', "sip:" .. v["reg_user"] .. "@" .. v["network_ip"] .. ":" .. v["network_port"]);
     event:addHeader("subject", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"].. ":" .. v["network_port"]); 
     event:addHeader("type", "text/html");
     event:addHeader("hint", "the hint");

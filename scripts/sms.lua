@@ -13,5 +13,4 @@ event:addHeader("hint", "the hint");
 event:addHeader("replying", "true");
 event:addHeader("sip_profile", "external");
 event:addBody("TEST MESSAGE");
-
 event:fire();

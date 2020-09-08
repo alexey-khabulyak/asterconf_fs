@@ -2,7 +2,7 @@ local event = freeswitch.Event("CUSTOM", "SMS::SEND_MESSAGE");
 
 local api = freeswitch.API()
 
-local local_ip = api.executeString("eval $${local_ip_v4}")
+local local_ip = api:executeString("eval $${local_ip_v4}")
 
 event:addHeader("proto", "sip");
 event:addHeader("dest_proto", "sip");

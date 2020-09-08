@@ -1,6 +1,5 @@
 <profile name="external">
   <gateways>
-    <X-PRE-PROCESS cmd="include" data="external/*.xml"/>
   </gateways>
 
   <aliases>

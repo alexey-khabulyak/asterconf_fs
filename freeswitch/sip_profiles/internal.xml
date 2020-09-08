@@ -1,11 +1,4 @@
 <profile name="internal">
-  <aliases>
-  </aliases>
-  <gateways>
-  </gateways>
-  <domains>
-    <domain name="all" alias="true" parse="false"/>
-  </domains>
   <settings>
     <param name="debug" value="0"/>
     <param name="sip-trace" value="no"/>

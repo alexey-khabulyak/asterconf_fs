@@ -4,7 +4,7 @@ local api = freeswitch.API()
 local local_ip = api:executeString("eval $${local_ip_v4}")
 local reg_users = api:executeString("show registrations as json")
 
-local t = json.decode(text)
+local t = json.decode(reg_users)
 
 for k,v in ipairs(t["rows"]) do
     event:addHeader("proto", "sip");

@@ -15,7 +15,7 @@ for k,v in ipairs(t["rows"]) do
     event:addHeader("to", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"] .. ":" .. v["network_port"]);
     freeswitch.consoleLog('NOTICE', "sip:" .. v["reg_user"] .. "@" .. v["network_ip"] .. ":" .. v["network_port"]);
     event:addHeader("subject", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"].. ":" .. v["network_port"]); 
-    event:addHeader("type", "text/html");
+    event:addHeader("type", "text/plain");
     event:addHeader("hint", "the hint");
     event:addHeader("replying", "true");
     event:addHeader("sip_profile", "internal");

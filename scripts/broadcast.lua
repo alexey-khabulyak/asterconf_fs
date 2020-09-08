@@ -12,13 +12,12 @@ for k,v in ipairs(t["rows"]) do
     event:addHeader("dest_proto", "sip");
     event:addHeader("from", "freeswitch@" .. local_ip);
     event:addHeader("from_full", "sip:freeswitch@" .. local_ip);
-    event:addHeader("to", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"] .. v["network_port"]);
-    event:addHeader("subject", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"].. v["network_port"]); 
+    event:addHeader("to", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"] .. ":" .. v["network_port"]);
+    event:addHeader("subject", "sip:" .. v["reg_user"] .. "@" .. v["network_ip"].. ":" .. v["network_port"]); 
     event:addHeader("type", "text/html");
     event:addHeader("hint", "the hint");
     event:addHeader("replying", "true");
     event:addHeader("sip_profile", "internal");
     event:addBody("TEST MESSAGE");
     event:fire();
-
 end

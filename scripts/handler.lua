@@ -5,16 +5,6 @@ api = freeswitch.API()
 
 global_cache = false
 
-if (not params) then
-    params = {}
-    function params:getHeader(name)
-        self.name = name;
-    end
-    function params:serialize(name)
-        self.name = name;
-    end
-end
-
 if (params:serialize() ~= nil) then
     printDebugMsg("[xml_handler] Params:\n" .. params:serialize() .. "\n");
 end

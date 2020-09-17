@@ -3,6 +3,10 @@ local xml = {}
 
 local context = params:getHeader("Caller-Context")
 
+if session == nil then
+    printDebugMsg("empty session")
+end
+
 local sql_string = "select * from mod_lua_context where name = '" .. context .. "' limit 1;"
 local sql_result = database.make_query(sql_string)
 
